@@ -1,15 +1,24 @@
-package com.cubicoder.linkedlist;
+package com.cubicoder.singly.linkedlist;
 
 public class InsertionAtkthIndex {
 
 	public static Node insertAfter(Node head, int new_data, int position) {
+		
+		Node new_node = new Node(new_data);
+		if(position ==1) {
+			new_node.next = head;
+			return new_node;
+		}
+		
 		Node current = head;
-
-		for (int i = 0; i < position - 1; i++) {
+		for (int i = 0; i < position - 2; i++) {
 			current = current.next;
 		}
-
-		Node new_node = new Node(new_data);
+		
+		if(current == null)
+			return head;
+		
+		
 		new_node.next = current.next;
 		current.next = new_node;
 
@@ -35,7 +44,7 @@ public class InsertionAtkthIndex {
 		System.out.println("Before Inserting the new element at given index");
 		InsertionAtkthIndex.display(head);
 
-		InsertionAtkthIndex.insertAfter(head, 30, 2);
+		InsertionAtkthIndex.insertAfter(head, 30, 3);
 
 		System.out.println("After Inserting the new element at given index");
 		InsertionAtkthIndex.display(head);

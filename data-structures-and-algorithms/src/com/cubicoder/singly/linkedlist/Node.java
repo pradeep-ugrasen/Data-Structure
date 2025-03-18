@@ -1,4 +1,4 @@
-package com.cubicoder.linkedlist;
+package com.cubicoder.singly.linkedlist;
 
 public class Node {
 	
